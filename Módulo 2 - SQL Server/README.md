@@ -26,9 +26,13 @@ docker exec -it sqlserver bash
 ~~~
 docker cp ./LemonMusic.bak sqlserver:/tmp
 ~~~
+* Una vez en el SQL Server Management Studio, en la carpeta tmp ya tenemos la base de datos y hacemos restore de la DB.
+  ![image](https://github.com/Gkmaik/Lemoncode-backend-net/assets/164330643/1c6b102d-3196-4c7a-95a8-c1f8cddb8d5a)
 
-### A third-level heading
+## Consultas
+Adjunto fichero **consultas.script.sql**
 
-~~~
-Esto es código
-~~~
+# Básico 2
+Adjunto Modelo relacional de la base de datos LemonMusic.bak
+![image](https://github.com/Gkmaik/Lemoncode-backend-net/assets/164330643/d7d42725-6f42-4a6a-ae93-7b549b01de04)
+
