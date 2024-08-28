@@ -1,6 +1,6 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using BookManager.DataAccess;
+using BookManager.Models;
+using Microsoft.EntityFrameworkCore;
 
-app.MapGet("/", () => "Hello World!");
-
-app.Run();
+using var context = new LibraryContext();
+context.SaveChanges();
