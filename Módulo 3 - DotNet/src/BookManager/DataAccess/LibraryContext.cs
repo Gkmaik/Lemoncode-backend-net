@@ -1,5 +1,4 @@
 ﻿using BookManager.Domain.Models;
-using BookManager.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookManager.DataAccess
