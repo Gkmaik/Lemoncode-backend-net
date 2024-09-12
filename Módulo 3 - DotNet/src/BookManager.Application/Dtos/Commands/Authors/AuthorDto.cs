@@ -23,7 +23,7 @@ public class AuthorDto
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
     public DateTime Birth { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Country Code is required.")]
     [StringLength(2, MinimumLength = 2, ErrorMessage = "CountryCode must be a 2-character ISO 3166-1 alpha-2 code.")]
     public string? CountryCode { get; set; }
 }
