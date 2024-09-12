@@ -1,6 +1,6 @@
-﻿using Lemoncode.LibraryExample.Domain.Entities.Exceptions;
+﻿using BookManager.Domain.Exceptions;
 
-namespace Lemoncode.LibraryExample.Domain.Entities;
+namespace BookManager.Domain;
 
 public abstract record class ValueObject
 {

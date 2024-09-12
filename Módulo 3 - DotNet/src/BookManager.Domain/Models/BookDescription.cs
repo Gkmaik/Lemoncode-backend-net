@@ -1,4 +1,4 @@
-﻿using Lemoncode.LibraryExample.Domain.Entities.Exceptions;
+﻿using BookManager.Domain;
 
 using System;
 using System.Collections.Generic;

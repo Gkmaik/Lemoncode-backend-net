@@ -21,12 +21,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookManager.Application\BookManager.Application.csproj" />
+    <ProjectReference Include="..\BookManager.Domain\BookManager.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>86a07160-9d82-4865-a9d9-62415682955e</UserSecretsId>
   </PropertyGroup>
 
 </Project>

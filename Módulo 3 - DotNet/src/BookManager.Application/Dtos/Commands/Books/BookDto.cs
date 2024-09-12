@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookManager.Application.Dtos.Commands.Books;
 
-public class BookrDto
+public class BookDto
 {
     public int Id { get; set; }
 
