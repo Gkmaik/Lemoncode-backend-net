@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BookManager.Application.Dtos.Commands.Authors;
 
@@ -13,7 +8,7 @@ public class AuthorDto
 
     [Required(ErrorMessage = "The name is required.")]
     [StringLength(100, ErrorMessage = "The name must contains 100 characters maximum.")]
-    public required string FirstName { get; set; }
+    public required string Name { get; set; }
 
     [Required(ErrorMessage = "The last name is required.")]
     [StringLength(100, ErrorMessage = "The last name must contains 100 characters maximum.")]

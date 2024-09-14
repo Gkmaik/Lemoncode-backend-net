@@ -1,45 +1,45 @@
+using BookManager.Application.Validators.Authors;
 using BookManager.DataAccess;
+using BookManager.Extensions;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
+builder.Services.AddDbContextFactory<LibraryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
+builder.Services.AddMappings()
+    .AddConfigurations(builder.Configuration)
+    .AddInfraServices()
+    .AddAppServices()
+    .AddValidatorsFromAssemblyContaining<AuthorValidator>()
+    .AddControllers();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer()
-    .AddSwaggerGen()
-    .AddDbContext<LibraryContext>(options =>
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), sqlServerOptions =>
-        {
-            sqlServerOptions.EnableRetryOnFailure();
-        });
-        options.EnableSensitiveDataLogging(true);
-    })
-    .AddControllersWithViews();
+    .AddSwaggerGen();
+builder.Services.AddHttpClient();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
-
 // Configure the HTTP request pipeline.
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
+{
+    app.UseExceptionHandler("/error");
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllers();
 
 app.Run();

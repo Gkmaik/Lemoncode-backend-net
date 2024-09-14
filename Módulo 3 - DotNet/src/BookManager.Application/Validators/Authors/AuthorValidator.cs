@@ -12,7 +12,7 @@ public class AuthorValidator : AbstractValidator<AuthorDto>
 {
     public AuthorValidator()
     {
-        RuleFor(p => p.FirstName)
+        RuleFor(p => p.Name)
             .NotNull()
             .NotEmpty()
             .Length(1, 100)

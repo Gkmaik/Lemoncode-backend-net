@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookManager.Domain.Exceptions;
+﻿namespace BookManager.Domain.Exceptions;
 
 [Serializable]
 public class InvalidEntityStateException : Exception
